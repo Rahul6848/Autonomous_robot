@@ -1,0 +1,21 @@
+material TurnLeftSign/Board
+{
+  technique
+  {
+    pass
+    {
+      ambient 1 1 1 1
+      diffuse 1 1 1 1
+      specular 0 0 0 1 1
+      emissive 0.2 0.2 0.2 1
+      lighting off
+
+      texture_unit
+      {
+        texture turn_left_sign.png
+        filtering anisotropic
+        max_anisotropy 16
+      }
+    }
+  }
+}

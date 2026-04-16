@@ -1,0 +1,54 @@
+<launch>
+    <let name="urdf_path"
+         value="$(find-pkg-share my_robot_description)/urdf/my_robot.urdf.xacro" />
+    
+    <let name="urdf_config_path"
+         value="$(find-pkg-share my_robot_bringup)/rviz/urdf_config.rviz" />
+
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="robot_description" 
+               value="$(command 'xacro $(var urdf_path)')" />
+    </node>
+
+    <include file="$(find-pkg-share gazebo_ros)/launch/gazebo.launch.py">
+     <arg name="world" value="$(find-pkg-share my_robot_bringup)/worlds/road_world.world" />
+    </include>
+
+    <node pkg="gazebo_ros" exec="spawn_entity.py"
+          args="-topic robot_description -entity my_robot -x -8.0 -y 0.75 -z 0.2" />
+
+    <node pkg="my_robot_controller" exec="lidar_navigation_controller" output="screen">
+        <param name="scan_topic" value="/scan" />
+        <param name="control_rate_hz" value="10.0" />
+        <param name="forward_speed" value="0.24" />
+        <param name="slow_speed" value="0.12" />
+        <param name="turn_speed" value="1.0" />
+        <param name="scan_max_range" value="5.0" />
+        <param name="safe_side_distance" value="0.60" />
+        <param name="critical_side_distance" value="0.32" />
+        <param name="front_safe_distance" value="1.20" />
+        <param name="critical_front_distance" value="0.45" />
+        <param name="front_sector_deg" value="30.0" />
+        <param name="front_side_sector_deg" value="70.0" />
+        <param name="side_sector_start_deg" value="55.0" />
+        <param name="side_sector_end_deg" value="110.0" />
+        <param name="left_turn_bias" value="0.20" />
+        <param name="clear_path_threshold" value="1.50" />
+        <param name="self_filter_distance" value="0.22" />
+        <param name="min_points_per_sector" value="8" />
+        <param name="startup_hold_sec" value="1.5" />
+        <param name="corridor_width_threshold" value="0.90" />
+        <param name="corridor_center_gain" value="1.40" />
+        <param name="junction_opening_threshold" value="2.0" />
+        <param name="turn_commit_sec" value="1.8" />
+        <param name="committed_turn_speed" value="0.75" />
+        <param name="committed_turn_linear_speed" value="0.12" />
+        <param name="corridor_confirm_frames" value="4" />
+        <param name="opening_confirm_frames" value="2" />
+        <param name="junction_arm_x" value="2.5" />
+        <param name="junction_arm_y" value="0.0" />
+    </node>
+
+    <node pkg="rviz2" exec="rviz2" output="screen" args="-d $(var urdf_config_path)" />
+    
+</launch>

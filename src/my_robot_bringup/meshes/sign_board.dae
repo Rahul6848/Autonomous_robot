@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA version="1.4.1" xmlns="http://www.collada.org/2005/11/COLLADASchema">
+  <asset>
+    <contributor>
+      <authoring_tool>Codex</authoring_tool>
+    </contributor>
+    <created>2026-04-05T00:00:00Z</created>
+    <modified>2026-04-05T00:00:00Z</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="turn_left_sign_png" name="turn_left_sign_png">
+      <init_from>../materials/textures/turn_left_sign.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="TurnLeftSignBoard-effect">
+      <profile_COMMON>
+        <newparam sid="surface">
+          <surface type="2D">
+            <init_from>turn_left_sign_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="sampler">
+          <sampler2D>
+            <source>surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color>0.2 0.2 0.2 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="sampler" texcoord="UVMap"/>
+            </diffuse>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="TurnLeftSignBoard-material" name="TurnLeftSignBoard-material">
+      <instance_effect url="#TurnLeftSignBoard-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="sign_board-mesh" name="sign_board">
+      <mesh>
+        <source id="sign_board-positions">
+          <float_array id="sign_board-positions-array" count="12">-0.35 0 0.35 0.35 0 0.35 0.35 0 -0.35 -0.35 0 -0.35</float_array>
+          <technique_common>
+            <accessor source="#sign_board-positions-array" count="4" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="sign_board-normals">
+          <float_array id="sign_board-normals-array" count="3">0 1 0</float_array>
+          <technique_common>
+            <accessor source="#sign_board-normals-array" count="1" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="sign_board-map-0">
+          <float_array id="sign_board-map-0-array" count="8">1 1 0 1 0 0 1 0</float_array>
+          <technique_common>
+            <accessor source="#sign_board-map-0-array" count="4" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="sign_board-vertices">
+          <input semantic="POSITION" source="#sign_board-positions"/>
+        </vertices>
+        <triangles material="TurnLeftSignBoard-material" count="2">
+          <input semantic="VERTEX" source="#sign_board-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#sign_board-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#sign_board-map-0" offset="2" set="0"/>
+          <p>0 0 0 1 0 1 2 0 2 0 0 0 2 0 2 3 0 3</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="sign_board" name="sign_board">
+        <instance_geometry url="#sign_board-mesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="TurnLeftSignBoard-material" target="#TurnLeftSignBoard-material"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

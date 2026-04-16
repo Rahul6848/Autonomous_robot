@@ -1,0 +1,5 @@
+[console_scripts]
+lidar_navigation_controller = my_robot_controller.lidar_navigation_controller:main
+move_robot = my_robot_controller.move_robot:main
+perception_controller = my_robot_controller.perception_controller:main
+

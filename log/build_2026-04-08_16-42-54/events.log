@@ -1,0 +1,395 @@
+[0.000000] (-) TimerEvent: {}
+[0.000609] (-) JobUnselected: {'identifier': 'my_robot_description'}
+[0.000683] (my_robot_controller) JobQueued: {'identifier': 'my_robot_controller', 'dependencies': OrderedDict()}
+[0.000707] (my_robot_bringup) JobQueued: {'identifier': 'my_robot_bringup', 'dependencies': OrderedDict([('my_robot_description', '/home/rahul/ros2_workspace/install/my_robot_description')])}
+[0.000737] (my_robot_controller) JobStarted: {'identifier': 'my_robot_controller'}
+[0.009793] (my_robot_bringup) JobStarted: {'identifier': 'my_robot_bringup'}
+[0.099851] (-) TimerEvent: {}
+[0.200108] (-) TimerEvent: {}
+[0.269333] (my_robot_bringup) JobProgress: {'identifier': 'my_robot_bringup', 'progress': 'cmake'}
+[0.269930] (my_robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '/home/rahul/ros2_workspace/src/my_robot_bringup', '-DCMAKE_INSTALL_PREFIX=/home/rahul/ros2_workspace/install/my_robot_bringup'], 'cwd': '/home/rahul/ros2_workspace/build/my_robot_bringup', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('CODEX_CI', '1'), ('LANGUAGE', 'en_IN:en'), ('USER', 'rahul'), ('XDG_SESSION_TYPE', 'wayland'), ('LAMMPS_POTENTIALS', '/usr/share/lammps/potentials'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/rahul/ros2_ws/install/examples_rclcpp_wait_set/lib:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber/lib:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition/lib:/home/rahul/colcon_ws/install/servo_msgs/lib:/home/rahul/colcon_ws/install/realsense_gazebo_plugin/lib:/home/rahul/colcon_ws/install/payload_service/lib:/home/rahul/colcon_ws/install/linkattacher_msgs/lib:/home/rahul/colcon_ws/install/ebot_docking/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/rahul'), ('OLDPWD', '/home/rahul'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('HOMEBREW_PREFIX', '/home/linuxbrew/.linuxbrew'), ('GTK_MODULES', 'gail:atk-bridge'), ('PAGER', 'cat'), ('LC_CTYPE', 'C.UTF-8'), ('SYSTEMD_EXEC_PID', '1724'), ('IM_CONFIG_CHECK_ENV', '1'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_colcon_cd_root', '/opt/ros/humble/'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/rahul/colcon_ws/install:/home/rahul/ros2_ws/install:/home/rahul/arduinobot_ws/install'), ('INFOPATH', '/home/linuxbrew/.linuxbrew/share/info:'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'rahul'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rahul'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/../../share/gazebo-11/models:'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/home/rahul/.local/bin:/home/rahul/.codex/tmp/arg0/codex-arg0OrSaql:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/opt/ros/humble/bin:/home/rahul/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/rahul-Victus-by-HP-Laptop-16-e0xxx:@/tmp/.ICE-unix/1696,unix/rahul-Victus-by-HP-Laptop-16-e0xxx:/tmp/.ICE-unix/1696'), ('HOMEBREW_CELLAR', '/home/linuxbrew/.linuxbrew/Cellar'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/83445c30_8531_41f4_81db_de1ed4238fa7'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('CODEX_SANDBOX_NETWORK_DISABLED', '1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('GH_PAGER', 'cat'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.27FON3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.101'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/rahul/ros2_workspace/install/my_robot_description:/home/rahul/arduinobot_ws/install/arduinobot_py_examples:/home/rahul/arduinobot_ws/install/arduinobot_description:/home/rahul/ros2_ws/install/launch_testing_examples:/home/rahul/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclpy_minimal_service:/home/rahul/ros2_ws/install/examples_rclpy_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_client:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclpy_guard_conditions:/home/rahul/ros2_ws/install/examples_rclpy_executors:/home/rahul/ros2_ws/install/examples_rclcpp_wait_set:/home/rahul/ros2_ws/install/examples_rclcpp_multithreaded_executor:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_timer:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_service:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_client:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclcpp_cbg_executor:/home/rahul/ros2_ws/install/examples_rclcpp_async_client:/home/rahul/ros2_ws/install/My_package:/home/rahul/colcon_ws/install/ur_simulation_gazebo:/home/rahul/colcon_ws/install/ur_moveit_config:/home/rahul/colcon_ws/install/ur_description:/home/rahul/colcon_ws/install/ur5_control:/home/rahul/colcon_ws/install/realsense_gazebo_plugin:/home/rahul/colcon_ws/install/pymoveit2:/home/rahul/colcon_ws/install/ebot_description:/home/rahul/colcon_ws/install/payload_service:/home/rahul/colcon_ws/install/linkattacher_msgs:/home/rahul/colcon_ws/install/eyantra_warehouse:/home/rahul/colcon_ws/install/ebot_nav2:/home/rahul/colcon_ws/install/ebot_docking:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019d6c30-7ea4-7dc1-9e8b-35cb84d97593'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11/../../share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('GIT_PAGER', 'cat'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rahul/ros2_workspace/build/my_robot_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/rahul/arduinobot_ws/install/arduinobot_py_examples/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/launch_testing_examples/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_pointcloud_publisher/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_subscriber/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_service/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_publisher/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_client/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_server/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_client/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_guard_conditions/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_executors/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/My_package/lib/python3.10/site-packages:/home/rahul/colcon_ws/install/ur5_control/lib/python3.10/site-packages:/home/rahul/colcon_ws/install/pymoveit2/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/payload_service/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/linkattacher_msgs/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/ebot_docking/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HOMEBREW_REPOSITORY', '/home/linuxbrew/.linuxbrew/Homebrew'), ('MSI2LMP_LIBRARY', '/usr/share/lammps/frc_files'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/rahul/ros2_workspace/install/my_robot_description:/home/rahul/arduinobot_ws/install/arduinobot_description:/home/rahul/ros2_ws/install/examples_rclcpp_wait_set:/home/rahul/ros2_ws/install/examples_rclcpp_multithreaded_executor:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_timer:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_service:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_client:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclcpp_cbg_executor:/home/rahul/ros2_ws/install/examples_rclcpp_async_client:/home/rahul/colcon_ws/install/ur_simulation_gazebo:/home/rahul/colcon_ws/install/ur_moveit_config:/home/rahul/colcon_ws/install/ur_description:/home/rahul/colcon_ws/install/servo_msgs:/home/rahul/colcon_ws/install/realsense_gazebo_plugin:/home/rahul/colcon_ws/install/pymoveit2:/home/rahul/colcon_ws/install/ebot_description:/home/rahul/colcon_ws/install/payload_service:/home/rahul/colcon_ws/install/linkattacher_msgs:/home/rahul/colcon_ws/install/eyantra_warehouse:/home/rahul/colcon_ws/install/ebot_nav2:/home/rahul/colcon_ws/install/ebot_docking:/home/rahul/arduinobot_ws/install/arduinobot_py_examples:/home/rahul/ros2_ws/install/launch_testing_examples:/home/rahul/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclpy_minimal_service:/home/rahul/ros2_ws/install/examples_rclpy_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_client:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclpy_guard_conditions:/home/rahul/ros2_ws/install/examples_rclpy_executors:/home/rahul/ros2_ws/install/My_package:/home/rahul/colcon_ws/install/ur5_control:/opt/ros/humble')]), 'shell': False}
+[0.285063] (my_robot_bringup) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.300175] (-) TimerEvent: {}
+[0.398592] (my_robot_bringup) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.400246] (-) TimerEvent: {}
+[0.461385] (my_robot_bringup) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.463761] (my_robot_bringup) StdoutLine: {'line': b'-- Generating done\n'}
+[0.465283] (my_robot_bringup) StdoutLine: {'line': b'-- Build files have been written to: /home/rahul/ros2_workspace/build/my_robot_bringup\n'}
+[0.467543] (my_robot_bringup) CommandEnded: {'returncode': 0}
+[0.468157] (my_robot_bringup) JobProgress: {'identifier': 'my_robot_bringup', 'progress': 'build'}
+[0.468957] (my_robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/rahul/ros2_workspace/build/my_robot_bringup', '--', '-j16', '-l16'], 'cwd': '/home/rahul/ros2_workspace/build/my_robot_bringup', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('CODEX_CI', '1'), ('LANGUAGE', 'en_IN:en'), ('USER', 'rahul'), ('XDG_SESSION_TYPE', 'wayland'), ('LAMMPS_POTENTIALS', '/usr/share/lammps/potentials'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/rahul/ros2_ws/install/examples_rclcpp_wait_set/lib:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber/lib:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition/lib:/home/rahul/colcon_ws/install/servo_msgs/lib:/home/rahul/colcon_ws/install/realsense_gazebo_plugin/lib:/home/rahul/colcon_ws/install/payload_service/lib:/home/rahul/colcon_ws/install/linkattacher_msgs/lib:/home/rahul/colcon_ws/install/ebot_docking/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/rahul'), ('OLDPWD', '/home/rahul'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('HOMEBREW_PREFIX', '/home/linuxbrew/.linuxbrew'), ('GTK_MODULES', 'gail:atk-bridge'), ('PAGER', 'cat'), ('LC_CTYPE', 'C.UTF-8'), ('SYSTEMD_EXEC_PID', '1724'), ('IM_CONFIG_CHECK_ENV', '1'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_colcon_cd_root', '/opt/ros/humble/'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/rahul/colcon_ws/install:/home/rahul/ros2_ws/install:/home/rahul/arduinobot_ws/install'), ('INFOPATH', '/home/linuxbrew/.linuxbrew/share/info:'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'rahul'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rahul'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/../../share/gazebo-11/models:'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/home/rahul/.local/bin:/home/rahul/.codex/tmp/arg0/codex-arg0OrSaql:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/opt/ros/humble/bin:/home/rahul/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/rahul-Victus-by-HP-Laptop-16-e0xxx:@/tmp/.ICE-unix/1696,unix/rahul-Victus-by-HP-Laptop-16-e0xxx:/tmp/.ICE-unix/1696'), ('HOMEBREW_CELLAR', '/home/linuxbrew/.linuxbrew/Cellar'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/83445c30_8531_41f4_81db_de1ed4238fa7'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('CODEX_SANDBOX_NETWORK_DISABLED', '1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('GH_PAGER', 'cat'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.27FON3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.101'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/rahul/ros2_workspace/install/my_robot_description:/home/rahul/arduinobot_ws/install/arduinobot_py_examples:/home/rahul/arduinobot_ws/install/arduinobot_description:/home/rahul/ros2_ws/install/launch_testing_examples:/home/rahul/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclpy_minimal_service:/home/rahul/ros2_ws/install/examples_rclpy_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_client:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclpy_guard_conditions:/home/rahul/ros2_ws/install/examples_rclpy_executors:/home/rahul/ros2_ws/install/examples_rclcpp_wait_set:/home/rahul/ros2_ws/install/examples_rclcpp_multithreaded_executor:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_timer:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_service:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_client:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclcpp_cbg_executor:/home/rahul/ros2_ws/install/examples_rclcpp_async_client:/home/rahul/ros2_ws/install/My_package:/home/rahul/colcon_ws/install/ur_simulation_gazebo:/home/rahul/colcon_ws/install/ur_moveit_config:/home/rahul/colcon_ws/install/ur_description:/home/rahul/colcon_ws/install/ur5_control:/home/rahul/colcon_ws/install/realsense_gazebo_plugin:/home/rahul/colcon_ws/install/pymoveit2:/home/rahul/colcon_ws/install/ebot_description:/home/rahul/colcon_ws/install/payload_service:/home/rahul/colcon_ws/install/linkattacher_msgs:/home/rahul/colcon_ws/install/eyantra_warehouse:/home/rahul/colcon_ws/install/ebot_nav2:/home/rahul/colcon_ws/install/ebot_docking:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019d6c30-7ea4-7dc1-9e8b-35cb84d97593'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11/../../share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('GIT_PAGER', 'cat'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rahul/ros2_workspace/build/my_robot_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/rahul/arduinobot_ws/install/arduinobot_py_examples/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/launch_testing_examples/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_pointcloud_publisher/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_subscriber/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_service/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_publisher/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_client/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_server/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_client/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_guard_conditions/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_executors/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/My_package/lib/python3.10/site-packages:/home/rahul/colcon_ws/install/ur5_control/lib/python3.10/site-packages:/home/rahul/colcon_ws/install/pymoveit2/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/payload_service/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/linkattacher_msgs/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/ebot_docking/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HOMEBREW_REPOSITORY', '/home/linuxbrew/.linuxbrew/Homebrew'), ('MSI2LMP_LIBRARY', '/usr/share/lammps/frc_files'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/rahul/ros2_workspace/install/my_robot_description:/home/rahul/arduinobot_ws/install/arduinobot_description:/home/rahul/ros2_ws/install/examples_rclcpp_wait_set:/home/rahul/ros2_ws/install/examples_rclcpp_multithreaded_executor:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_timer:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_service:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_client:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclcpp_cbg_executor:/home/rahul/ros2_ws/install/examples_rclcpp_async_client:/home/rahul/colcon_ws/install/ur_simulation_gazebo:/home/rahul/colcon_ws/install/ur_moveit_config:/home/rahul/colcon_ws/install/ur_description:/home/rahul/colcon_ws/install/servo_msgs:/home/rahul/colcon_ws/install/realsense_gazebo_plugin:/home/rahul/colcon_ws/install/pymoveit2:/home/rahul/colcon_ws/install/ebot_description:/home/rahul/colcon_ws/install/payload_service:/home/rahul/colcon_ws/install/linkattacher_msgs:/home/rahul/colcon_ws/install/eyantra_warehouse:/home/rahul/colcon_ws/install/ebot_nav2:/home/rahul/colcon_ws/install/ebot_docking:/home/rahul/arduinobot_ws/install/arduinobot_py_examples:/home/rahul/ros2_ws/install/launch_testing_examples:/home/rahul/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclpy_minimal_service:/home/rahul/ros2_ws/install/examples_rclpy_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_client:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclpy_guard_conditions:/home/rahul/ros2_ws/install/examples_rclpy_executors:/home/rahul/ros2_ws/install/My_package:/home/rahul/colcon_ws/install/ur5_control:/opt/ros/humble')]), 'shell': False}
+[0.500354] (-) TimerEvent: {}
+[0.509941] (my_robot_bringup) CommandEnded: {'returncode': 0}
+[0.510643] (my_robot_bringup) JobProgress: {'identifier': 'my_robot_bringup', 'progress': 'install'}
+[0.519636] (my_robot_bringup) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/rahul/ros2_workspace/build/my_robot_bringup'], 'cwd': '/home/rahul/ros2_workspace/build/my_robot_bringup', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('CODEX_CI', '1'), ('LANGUAGE', 'en_IN:en'), ('USER', 'rahul'), ('XDG_SESSION_TYPE', 'wayland'), ('LAMMPS_POTENTIALS', '/usr/share/lammps/potentials'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/rahul/ros2_ws/install/examples_rclcpp_wait_set/lib:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber/lib:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition/lib:/home/rahul/colcon_ws/install/servo_msgs/lib:/home/rahul/colcon_ws/install/realsense_gazebo_plugin/lib:/home/rahul/colcon_ws/install/payload_service/lib:/home/rahul/colcon_ws/install/linkattacher_msgs/lib:/home/rahul/colcon_ws/install/ebot_docking/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('HOME', '/home/rahul'), ('OLDPWD', '/home/rahul'), ('DESKTOP_SESSION', 'ubuntu'), ('GAZEBO_MASTER_URI', 'http://localhost:11345'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('HOMEBREW_PREFIX', '/home/linuxbrew/.linuxbrew'), ('GTK_MODULES', 'gail:atk-bridge'), ('PAGER', 'cat'), ('LC_CTYPE', 'C.UTF-8'), ('SYSTEMD_EXEC_PID', '1724'), ('IM_CONFIG_CHECK_ENV', '1'), ('NO_COLOR', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_colcon_cd_root', '/opt/ros/humble/'), ('IM_CONFIG_PHASE', '1'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/rahul/colcon_ws/install:/home/rahul/ros2_ws/install:/home/rahul/arduinobot_ws/install'), ('INFOPATH', '/home/linuxbrew/.linuxbrew/share/info:'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'rahul'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'rahul'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', '/usr/share/gazebo-11/../../share/gazebo-11/models:'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('OGRE_RESOURCE_PATH', '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0'), ('PATH', '/home/rahul/.local/bin:/home/rahul/.codex/tmp/arg0/codex-arg0OrSaql:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/opt/ros/humble/bin:/home/rahul/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/rahul-Victus-by-HP-Laptop-16-e0xxx:@/tmp/.ICE-unix/1696,unix/rahul-Victus-by-HP-Laptop-16-e0xxx:/tmp/.ICE-unix/1696'), ('HOMEBREW_CELLAR', '/home/linuxbrew/.linuxbrew/Cellar'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/83445c30_8531_41f4_81db_de1ed4238fa7'), ('GNOME_SETUP_DISPLAY', ':1'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('CODEX_SANDBOX_NETWORK_DISABLED', '1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('GH_PAGER', 'cat'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/.mutter-Xwaylandauth.27FON3'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.101'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/rahul/ros2_workspace/install/my_robot_description:/home/rahul/arduinobot_ws/install/arduinobot_py_examples:/home/rahul/arduinobot_ws/install/arduinobot_description:/home/rahul/ros2_ws/install/launch_testing_examples:/home/rahul/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclpy_minimal_service:/home/rahul/ros2_ws/install/examples_rclpy_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_client:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclpy_guard_conditions:/home/rahul/ros2_ws/install/examples_rclpy_executors:/home/rahul/ros2_ws/install/examples_rclcpp_wait_set:/home/rahul/ros2_ws/install/examples_rclcpp_multithreaded_executor:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_timer:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_service:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_client:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclcpp_cbg_executor:/home/rahul/ros2_ws/install/examples_rclcpp_async_client:/home/rahul/ros2_ws/install/My_package:/home/rahul/colcon_ws/install/ur_simulation_gazebo:/home/rahul/colcon_ws/install/ur_moveit_config:/home/rahul/colcon_ws/install/ur_description:/home/rahul/colcon_ws/install/ur5_control:/home/rahul/colcon_ws/install/realsense_gazebo_plugin:/home/rahul/colcon_ws/install/pymoveit2:/home/rahul/colcon_ws/install/ebot_description:/home/rahul/colcon_ws/install/payload_service:/home/rahul/colcon_ws/install/linkattacher_msgs:/home/rahul/colcon_ws/install/eyantra_warehouse:/home/rahul/colcon_ws/install/ebot_nav2:/home/rahul/colcon_ws/install/ebot_docking:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('CODEX_THREAD_ID', '019d6c30-7ea4-7dc1-9e8b-35cb84d97593'), ('GAZEBO_RESOURCE_PATH', '/usr/share/gazebo-11/../../share/gazebo-11:'), ('GAZEBO_MODEL_DATABASE_URI', 'http://models.gazebosim.org'), ('GIT_PAGER', 'cat'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/rahul/ros2_workspace/build/my_robot_bringup'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('GAZEBO_PLUGIN_PATH', '/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/rahul/arduinobot_ws/install/arduinobot_py_examples/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/launch_testing_examples/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_pointcloud_publisher/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_subscriber/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_service/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_publisher/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_client/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_server/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_client/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_guard_conditions/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_executors/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/My_package/lib/python3.10/site-packages:/home/rahul/colcon_ws/install/ur5_control/lib/python3.10/site-packages:/home/rahul/colcon_ws/install/pymoveit2/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/payload_service/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/linkattacher_msgs/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/ebot_docking/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('HOMEBREW_REPOSITORY', '/home/linuxbrew/.linuxbrew/Homebrew'), ('MSI2LMP_LIBRARY', '/usr/share/lammps/frc_files'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/rahul/ros2_workspace/install/my_robot_description:/home/rahul/arduinobot_ws/install/arduinobot_description:/home/rahul/ros2_ws/install/examples_rclcpp_wait_set:/home/rahul/ros2_ws/install/examples_rclcpp_multithreaded_executor:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_timer:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_service:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_client:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclcpp_cbg_executor:/home/rahul/ros2_ws/install/examples_rclcpp_async_client:/home/rahul/colcon_ws/install/ur_simulation_gazebo:/home/rahul/colcon_ws/install/ur_moveit_config:/home/rahul/colcon_ws/install/ur_description:/home/rahul/colcon_ws/install/servo_msgs:/home/rahul/colcon_ws/install/realsense_gazebo_plugin:/home/rahul/colcon_ws/install/pymoveit2:/home/rahul/colcon_ws/install/ebot_description:/home/rahul/colcon_ws/install/payload_service:/home/rahul/colcon_ws/install/linkattacher_msgs:/home/rahul/colcon_ws/install/eyantra_warehouse:/home/rahul/colcon_ws/install/ebot_nav2:/home/rahul/colcon_ws/install/ebot_docking:/home/rahul/arduinobot_ws/install/arduinobot_py_examples:/home/rahul/ros2_ws/install/launch_testing_examples:/home/rahul/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclpy_minimal_service:/home/rahul/ros2_ws/install/examples_rclpy_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_client:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclpy_guard_conditions:/home/rahul/ros2_ws/install/examples_rclpy_executors:/home/rahul/ros2_ws/install/My_package:/home/rahul/colcon_ws/install/ur5_control:/opt/ros/humble')]), 'shell': False}
+[0.528056] (my_robot_bringup) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.528439] (my_robot_bringup) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[0.528756] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup//launch/my_robot_gazebo.launch.xml\n'}
+[0.528947] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup//rviz/urdf_config.rviz\n'}
+[0.529113] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup//worlds/my_world_2\n'}
+[0.529219] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup//worlds/road_world.world\n'}
+[0.529430] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup//materials/scripts/turn_left_sign.material\n'}
+[0.529543] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup//materials/textures/turn_left_sign.png\n'}
+[0.529694] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup//meshes/sign_board.dae\n'}
+[0.529839] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/ament_index/resource_index/package_run_dependencies/my_robot_bringup\n'}
+[0.529973] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/ament_index/resource_index/parent_prefix_path/my_robot_bringup\n'}
+[0.530098] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup/environment/ament_prefix_path.sh\n'}
+[0.530210] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup/environment/ament_prefix_path.dsv\n'}
+[0.530324] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup/environment/path.sh\n'}
+[0.530614] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup/environment/path.dsv\n'}
+[0.530729] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup/local_setup.bash\n'}
+[0.530840] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup/local_setup.sh\n'}
+[0.530949] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup/local_setup.zsh\n'}
+[0.531054] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup/local_setup.dsv\n'}
+[0.531130] (my_robot_bringup) StdoutLine: {'line': b'-- Symlinking: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup/package.dsv\n'}
+[0.540878] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/ament_index/resource_index/packages/my_robot_bringup\n'}
+[0.541028] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup/cmake/my_robot_bringupConfig.cmake\n'}
+[0.541200] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup/cmake/my_robot_bringupConfig-version.cmake\n'}
+[0.541254] (my_robot_bringup) StdoutLine: {'line': b'-- Up-to-date symlink: /home/rahul/ros2_workspace/install/my_robot_bringup/share/my_robot_bringup/package.xml\n'}
+[0.542493] (my_robot_bringup) CommandEnded: {'returncode': 0}
+[0.556359] (my_robot_bringup) JobEnded: {'identifier': 'my_robot_bringup', 'rc': 0}
+[0.600488] (-) TimerEvent: {}
+[0.700794] (-) TimerEvent: {}
+[0.801094] (-) TimerEvent: {}
+[0.901348] (-) TimerEvent: {}
+[1.001973] (-) TimerEvent: {}
+[1.102606] (-) TimerEvent: {}
+[1.202915] (-) TimerEvent: {}
+[1.303521] (-) TimerEvent: {}
+[1.404129] (-) TimerEvent: {}
+[1.504416] (-) TimerEvent: {}
+[1.604636] (-) TimerEvent: {}
+[1.704862] (-) TimerEvent: {}
+[1.805466] (-) TimerEvent: {}
+[1.906134] (-) TimerEvent: {}
+[2.006549] (-) TimerEvent: {}
+[2.106790] (-) TimerEvent: {}
+[2.206999] (-) TimerEvent: {}
+[2.307193] (-) TimerEvent: {}
+[2.407805] (-) TimerEvent: {}
+[2.508336] (-) TimerEvent: {}
+[2.608580] (-) TimerEvent: {}
+[2.708840] (-) TimerEvent: {}
+[2.809172] (-) TimerEvent: {}
+[2.909643] (-) TimerEvent: {}
+[3.010301] (-) TimerEvent: {}
+[3.110997] (-) TimerEvent: {}
+[3.211606] (-) TimerEvent: {}
+[3.311902] (-) TimerEvent: {}
+[3.412154] (-) TimerEvent: {}
+[3.512722] (-) TimerEvent: {}
+[3.613000] (-) TimerEvent: {}
+[3.713493] (-) TimerEvent: {}
+[3.813865] (-) TimerEvent: {}
+[3.914528] (-) TimerEvent: {}
+[4.014793] (-) TimerEvent: {}
+[4.115005] (-) TimerEvent: {}
+[4.215189] (-) TimerEvent: {}
+[4.315355] (-) TimerEvent: {}
+[4.415534] (-) TimerEvent: {}
+[4.515734] (-) TimerEvent: {}
+[4.615946] (-) TimerEvent: {}
+[4.716152] (-) TimerEvent: {}
+[4.816352] (-) TimerEvent: {}
+[4.916548] (-) TimerEvent: {}
+[5.016733] (-) TimerEvent: {}
+[5.116924] (-) TimerEvent: {}
+[5.217105] (-) TimerEvent: {}
+[5.317296] (-) TimerEvent: {}
+[5.417610] (-) TimerEvent: {}
+[5.517983] (-) TimerEvent: {}
+[5.618222] (-) TimerEvent: {}
+[5.718436] (-) TimerEvent: {}
+[5.819049] (-) TimerEvent: {}
+[5.919351] (-) TimerEvent: {}
+[6.019800] (-) TimerEvent: {}
+[6.119994] (-) TimerEvent: {}
+[6.220604] (-) TimerEvent: {}
+[6.320912] (-) TimerEvent: {}
+[6.421425] (-) TimerEvent: {}
+[6.521667] (-) TimerEvent: {}
+[6.621911] (-) TimerEvent: {}
+[6.722503] (-) TimerEvent: {}
+[6.822861] (-) TimerEvent: {}
+[6.923331] (-) TimerEvent: {}
+[7.023756] (-) TimerEvent: {}
+[7.124265] (-) TimerEvent: {}
+[7.225069] (-) TimerEvent: {}
+[7.325711] (-) TimerEvent: {}
+[7.426072] (-) TimerEvent: {}
+[7.526704] (-) TimerEvent: {}
+[7.626966] (-) TimerEvent: {}
+[7.727199] (-) TimerEvent: {}
+[7.827500] (-) TimerEvent: {}
+[7.928019] (-) TimerEvent: {}
+[8.028427] (-) TimerEvent: {}
+[8.129002] (-) TimerEvent: {}
+[8.229245] (-) TimerEvent: {}
+[8.329437] (-) TimerEvent: {}
+[8.430033] (-) TimerEvent: {}
+[8.530666] (-) TimerEvent: {}
+[8.631517] (-) TimerEvent: {}
+[8.731906] (-) TimerEvent: {}
+[8.832313] (-) TimerEvent: {}
+[8.933084] (-) TimerEvent: {}
+[9.033780] (-) TimerEvent: {}
+[9.134072] (-) TimerEvent: {}
+[9.234659] (-) TimerEvent: {}
+[9.334950] (-) TimerEvent: {}
+[9.435411] (-) TimerEvent: {}
+[9.535953] (-) TimerEvent: {}
+[9.636619] (-) TimerEvent: {}
+[9.737326] (-) TimerEvent: {}
+[9.838035] (-) TimerEvent: {}
+[9.938322] (-) TimerEvent: {}
+[10.038616] (-) TimerEvent: {}
+[10.138870] (-) TimerEvent: {}
+[10.239485] (-) TimerEvent: {}
+[10.339819] (-) TimerEvent: {}
+[10.440221] (-) TimerEvent: {}
+[10.541165] (-) TimerEvent: {}
+[10.641668] (-) TimerEvent: {}
+[10.742215] (-) TimerEvent: {}
+[10.842860] (-) TimerEvent: {}
+[10.943625] (-) TimerEvent: {}
+[11.043937] (-) TimerEvent: {}
+[11.144229] (-) TimerEvent: {}
+[11.244945] (-) TimerEvent: {}
+[11.345699] (-) TimerEvent: {}
+[11.446029] (-) TimerEvent: {}
+[11.546617] (-) TimerEvent: {}
+[11.647284] (-) TimerEvent: {}
+[11.747626] (-) TimerEvent: {}
+[11.847940] (-) TimerEvent: {}
+[11.948393] (-) TimerEvent: {}
+[12.048836] (-) TimerEvent: {}
+[12.149520] (-) TimerEvent: {}
+[12.249861] (-) TimerEvent: {}
+[12.350168] (-) TimerEvent: {}
+[12.450528] (-) TimerEvent: {}
+[12.550863] (-) TimerEvent: {}
+[12.651140] (-) TimerEvent: {}
+[12.751648] (-) TimerEvent: {}
+[12.852044] (-) TimerEvent: {}
+[12.952415] (-) TimerEvent: {}
+[13.053016] (-) TimerEvent: {}
+[13.153542] (-) TimerEvent: {}
+[13.254152] (-) TimerEvent: {}
+[13.354752] (-) TimerEvent: {}
+[13.455243] (-) TimerEvent: {}
+[13.555821] (-) TimerEvent: {}
+[13.656096] (-) TimerEvent: {}
+[13.756679] (-) TimerEvent: {}
+[13.856981] (-) TimerEvent: {}
+[13.957263] (-) TimerEvent: {}
+[14.057652] (-) TimerEvent: {}
+[14.158279] (-) TimerEvent: {}
+[14.258609] (-) TimerEvent: {}
+[14.358799] (-) TimerEvent: {}
+[14.458992] (-) TimerEvent: {}
+[14.559238] (-) TimerEvent: {}
+[14.659573] (-) TimerEvent: {}
+[14.760229] (-) TimerEvent: {}
+[14.860532] (-) TimerEvent: {}
+[14.960780] (-) TimerEvent: {}
+[15.061017] (-) TimerEvent: {}
+[15.161290] (-) TimerEvent: {}
+[15.261517] (-) TimerEvent: {}
+[15.361854] (-) TimerEvent: {}
+[15.462185] (-) TimerEvent: {}
+[15.562503] (-) TimerEvent: {}
+[15.662821] (-) TimerEvent: {}
+[15.763307] (-) TimerEvent: {}
+[15.863747] (-) TimerEvent: {}
+[15.964418] (-) TimerEvent: {}
+[16.065049] (-) TimerEvent: {}
+[16.165298] (-) TimerEvent: {}
+[16.265785] (-) TimerEvent: {}
+[16.366250] (-) TimerEvent: {}
+[16.466592] (-) TimerEvent: {}
+[16.566839] (-) TimerEvent: {}
+[16.667113] (-) TimerEvent: {}
+[16.767568] (-) TimerEvent: {}
+[16.867805] (-) TimerEvent: {}
+[16.968037] (-) TimerEvent: {}
+[17.068296] (-) TimerEvent: {}
+[17.168600] (-) TimerEvent: {}
+[17.268878] (-) TimerEvent: {}
+[17.369464] (-) TimerEvent: {}
+[17.470089] (-) TimerEvent: {}
+[17.570702] (-) TimerEvent: {}
+[17.671293] (-) TimerEvent: {}
+[17.771626] (-) TimerEvent: {}
+[17.872409] (-) TimerEvent: {}
+[17.972920] (-) TimerEvent: {}
+[18.073756] (-) TimerEvent: {}
+[18.174113] (-) TimerEvent: {}
+[18.274614] (-) TimerEvent: {}
+[18.374869] (-) TimerEvent: {}
+[18.475441] (-) TimerEvent: {}
+[18.576083] (-) TimerEvent: {}
+[18.676378] (-) TimerEvent: {}
+[18.776787] (-) TimerEvent: {}
+[18.877032] (-) TimerEvent: {}
+[18.977617] (-) TimerEvent: {}
+[19.078300] (-) TimerEvent: {}
+[19.178723] (-) TimerEvent: {}
+[19.279182] (-) TimerEvent: {}
+[19.380076] (-) TimerEvent: {}
+[19.480671] (-) TimerEvent: {}
+[19.581340] (-) TimerEvent: {}
+[19.681777] (-) TimerEvent: {}
+[19.783273] (-) TimerEvent: {}
+[19.884127] (-) TimerEvent: {}
+[19.984750] (-) TimerEvent: {}
+[20.085353] (-) TimerEvent: {}
+[20.185909] (-) TimerEvent: {}
+[20.286155] (-) TimerEvent: {}
+[20.386435] (-) TimerEvent: {}
+[20.486807] (-) TimerEvent: {}
+[20.587607] (-) TimerEvent: {}
+[20.688022] (-) TimerEvent: {}
+[20.788630] (-) TimerEvent: {}
+[20.888896] (-) TimerEvent: {}
+[20.989255] (-) TimerEvent: {}
+[21.089861] (-) TimerEvent: {}
+[21.190472] (-) TimerEvent: {}
+[21.291089] (-) TimerEvent: {}
+[21.391471] (-) TimerEvent: {}
+[21.491780] (-) TimerEvent: {}
+[21.592537] (-) TimerEvent: {}
+[21.693115] (-) TimerEvent: {}
+[21.793682] (-) TimerEvent: {}
+[21.894189] (-) TimerEvent: {}
+[21.994443] (-) TimerEvent: {}
+[22.095138] (-) TimerEvent: {}
+[22.195611] (-) TimerEvent: {}
+[22.295933] (-) TimerEvent: {}
+[22.396429] (-) TimerEvent: {}
+[22.496712] (-) TimerEvent: {}
+[22.597310] (-) TimerEvent: {}
+[22.697870] (-) TimerEvent: {}
+[22.798175] (-) TimerEvent: {}
+[22.898741] (-) TimerEvent: {}
+[22.999298] (-) TimerEvent: {}
+[23.099634] (-) TimerEvent: {}
+[23.200273] (-) TimerEvent: {}
+[23.300655] (-) TimerEvent: {}
+[23.400840] (-) TimerEvent: {}
+[23.501316] (-) TimerEvent: {}
+[23.601794] (-) TimerEvent: {}
+[23.702064] (-) TimerEvent: {}
+[23.802805] (-) TimerEvent: {}
+[23.903257] (-) TimerEvent: {}
+[24.003914] (-) TimerEvent: {}
+[24.104492] (-) TimerEvent: {}
+[24.204741] (-) TimerEvent: {}
+[24.305220] (-) TimerEvent: {}
+[24.405621] (-) TimerEvent: {}
+[24.506259] (-) TimerEvent: {}
+[24.606926] (-) TimerEvent: {}
+[24.707211] (-) TimerEvent: {}
+[24.807737] (-) TimerEvent: {}
+[24.908054] (-) TimerEvent: {}
+[25.008382] (-) TimerEvent: {}
+[25.108771] (-) TimerEvent: {}
+[25.209554] (-) TimerEvent: {}
+[25.309936] (-) TimerEvent: {}
+[25.410240] (-) TimerEvent: {}
+[25.510674] (-) TimerEvent: {}
+[25.611321] (-) TimerEvent: {}
+[25.711989] (-) TimerEvent: {}
+[25.812700] (-) TimerEvent: {}
+[25.912989] (-) TimerEvent: {}
+[26.013256] (-) TimerEvent: {}
+[26.113873] (-) TimerEvent: {}
+[26.214412] (-) TimerEvent: {}
+[26.314850] (-) TimerEvent: {}
+[26.415155] (-) TimerEvent: {}
+[26.515845] (-) TimerEvent: {}
+[26.616520] (-) TimerEvent: {}
+[26.717311] (-) TimerEvent: {}
+[26.817995] (-) TimerEvent: {}
+[26.918625] (-) TimerEvent: {}
+[27.018953] (-) TimerEvent: {}
+[27.119238] (-) TimerEvent: {}
+[27.219680] (-) TimerEvent: {}
+[27.320267] (-) TimerEvent: {}
+[27.421017] (-) TimerEvent: {}
+[27.521417] (-) TimerEvent: {}
+[27.621711] (-) TimerEvent: {}
+[27.721979] (-) TimerEvent: {}
+[27.822651] (-) TimerEvent: {}
+[27.923267] (-) TimerEvent: {}
+[28.024038] (-) TimerEvent: {}
+[28.124331] (-) TimerEvent: {}
+[28.224535] (-) TimerEvent: {}
+[28.324819] (-) TimerEvent: {}
+[28.425240] (-) TimerEvent: {}
+[28.525957] (-) TimerEvent: {}
+[28.626603] (-) TimerEvent: {}
+[28.727012] (-) TimerEvent: {}
+[28.827523] (-) TimerEvent: {}
+[28.927867] (-) TimerEvent: {}
+[29.028242] (-) TimerEvent: {}
+[29.128974] (-) TimerEvent: {}
+[29.229261] (-) TimerEvent: {}
+[29.330203] (-) TimerEvent: {}
+[29.430710] (-) TimerEvent: {}
+[29.531439] (-) TimerEvent: {}
+[29.632113] (-) TimerEvent: {}
+[29.732799] (-) TimerEvent: {}
+[29.833498] (-) TimerEvent: {}
+[29.933834] (-) TimerEvent: {}
+[30.034502] (-) TimerEvent: {}
+[30.134840] (-) TimerEvent: {}
+[30.235487] (-) TimerEvent: {}
+[30.335770] (-) TimerEvent: {}
+[30.435959] (-) TimerEvent: {}
+[30.536175] (-) TimerEvent: {}
+[30.588318] (my_robot_controller) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--uninstall', '--editable', '--build-directory', '/home/rahul/ros2_workspace/build/my_robot_controller/build'], 'cwd': '/home/rahul/ros2_workspace/build/my_robot_controller', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'CODEX_CI': '1', 'LANGUAGE': 'en_IN:en', 'USER': 'rahul', 'XDG_SESSION_TYPE': 'wayland', 'LAMMPS_POTENTIALS': '/usr/share/lammps/potentials', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rahul/ros2_ws/install/examples_rclcpp_wait_set/lib:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber/lib:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition/lib:/home/rahul/colcon_ws/install/servo_msgs/lib:/home/rahul/colcon_ws/install/realsense_gazebo_plugin/lib:/home/rahul/colcon_ws/install/payload_service/lib:/home/rahul/colcon_ws/install/linkattacher_msgs/lib:/home/rahul/colcon_ws/install/ebot_docking/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:', 'HOME': '/home/rahul', 'OLDPWD': '/home/rahul', 'DESKTOP_SESSION': 'ubuntu', 'GAZEBO_MASTER_URI': 'http://localhost:11345', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'HOMEBREW_PREFIX': '/home/linuxbrew/.linuxbrew', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'LC_CTYPE': 'C.UTF-8', 'SYSTEMD_EXEC_PID': '1724', 'IM_CONFIG_CHECK_ENV': '1', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_colcon_cd_root': '/opt/ros/humble/', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/rahul/colcon_ws/install:/home/rahul/ros2_ws/install:/home/rahul/arduinobot_ws/install', 'INFOPATH': '/home/linuxbrew/.linuxbrew/share/info:', 'ROS_DISTRO': 'humble', 'LOGNAME': 'rahul', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'rahul', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': '/usr/share/gazebo-11/../../share/gazebo-11/models:', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'OGRE_RESOURCE_PATH': '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0', 'PATH': '/home/rahul/.local/bin:/home/rahul/.codex/tmp/arg0/codex-arg0OrSaql:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/opt/ros/humble/bin:/home/rahul/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/rahul-Victus-by-HP-Laptop-16-e0xxx:@/tmp/.ICE-unix/1696,unix/rahul-Victus-by-HP-Laptop-16-e0xxx:/tmp/.ICE-unix/1696', 'HOMEBREW_CELLAR': '/home/linuxbrew/.linuxbrew/Cellar', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/83445c30_8531_41f4_81db_de1ed4238fa7', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'CODEX_SANDBOX_NETWORK_DISABLED': '1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'GH_PAGER': 'cat', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.27FON3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.101', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/rahul/arduinobot_ws/install/arduinobot_py_examples:/home/rahul/arduinobot_ws/install/arduinobot_description:/home/rahul/ros2_ws/install/launch_testing_examples:/home/rahul/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclpy_minimal_service:/home/rahul/ros2_ws/install/examples_rclpy_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_client:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclpy_guard_conditions:/home/rahul/ros2_ws/install/examples_rclpy_executors:/home/rahul/ros2_ws/install/examples_rclcpp_wait_set:/home/rahul/ros2_ws/install/examples_rclcpp_multithreaded_executor:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_timer:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_service:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_client:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclcpp_cbg_executor:/home/rahul/ros2_ws/install/examples_rclcpp_async_client:/home/rahul/ros2_ws/install/My_package:/home/rahul/colcon_ws/install/ur_simulation_gazebo:/home/rahul/colcon_ws/install/ur_moveit_config:/home/rahul/colcon_ws/install/ur_description:/home/rahul/colcon_ws/install/ur5_control:/home/rahul/colcon_ws/install/realsense_gazebo_plugin:/home/rahul/colcon_ws/install/pymoveit2:/home/rahul/colcon_ws/install/ebot_description:/home/rahul/colcon_ws/install/payload_service:/home/rahul/colcon_ws/install/linkattacher_msgs:/home/rahul/colcon_ws/install/eyantra_warehouse:/home/rahul/colcon_ws/install/ebot_nav2:/home/rahul/colcon_ws/install/ebot_docking:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CODEX_THREAD_ID': '019d6c30-7ea4-7dc1-9e8b-35cb84d97593', 'GAZEBO_RESOURCE_PATH': '/usr/share/gazebo-11/../../share/gazebo-11:', 'GAZEBO_MODEL_DATABASE_URI': 'http://models.gazebosim.org', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/rahul/ros2_workspace/build/my_robot_controller', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'GAZEBO_PLUGIN_PATH': '/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/rahul/ros2_workspace/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rahul/ros2_workspace/install/my_robot_controller/lib/python3.10/site-packages:/home/rahul/arduinobot_ws/install/arduinobot_py_examples/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/launch_testing_examples/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_pointcloud_publisher/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_subscriber/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_service/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_publisher/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_client/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_server/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_client/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_guard_conditions/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_executors/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/My_package/lib/python3.10/site-packages:/home/rahul/colcon_ws/install/ur5_control/lib/python3.10/site-packages:/home/rahul/colcon_ws/install/pymoveit2/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/payload_service/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/linkattacher_msgs/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/ebot_docking/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'HOMEBREW_REPOSITORY': '/home/linuxbrew/.linuxbrew/Homebrew', 'MSI2LMP_LIBRARY': '/usr/share/lammps/frc_files', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/rahul/arduinobot_ws/install/arduinobot_description:/home/rahul/ros2_ws/install/examples_rclcpp_wait_set:/home/rahul/ros2_ws/install/examples_rclcpp_multithreaded_executor:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_timer:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_service:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_client:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclcpp_cbg_executor:/home/rahul/ros2_ws/install/examples_rclcpp_async_client:/home/rahul/colcon_ws/install/ur_simulation_gazebo:/home/rahul/colcon_ws/install/ur_moveit_config:/home/rahul/colcon_ws/install/ur_description:/home/rahul/colcon_ws/install/servo_msgs:/home/rahul/colcon_ws/install/realsense_gazebo_plugin:/home/rahul/colcon_ws/install/pymoveit2:/home/rahul/colcon_ws/install/ebot_description:/home/rahul/colcon_ws/install/payload_service:/home/rahul/colcon_ws/install/linkattacher_msgs:/home/rahul/colcon_ws/install/eyantra_warehouse:/home/rahul/colcon_ws/install/ebot_nav2:/home/rahul/colcon_ws/install/ebot_docking'}, 'shell': False}
+[30.636271] (-) TimerEvent: {}
+[30.736435] (-) TimerEvent: {}
+[30.824106] (my_robot_controller) StdoutLine: {'line': b'running develop\n'}
+[30.836945] (-) TimerEvent: {}
+[30.937138] (-) TimerEvent: {}
+[30.988464] (my_robot_controller) StdoutLine: {'line': b'Removing /home/rahul/ros2_workspace/install/my_robot_controller/lib/python3.10/site-packages/my-robot-controller.egg-link (link to .)\n'}
+[31.011488] (my_robot_controller) CommandEnded: {'returncode': 0}
+[31.012642] (my_robot_controller) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/my_robot_controller', 'build', '--build-base', '/home/rahul/ros2_workspace/build/my_robot_controller/build', 'install', '--record', '/home/rahul/ros2_workspace/build/my_robot_controller/install.log', '--single-version-externally-managed', 'install_data', '--force'], 'cwd': '/home/rahul/ros2_workspace/src/my_robot_controller', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'CODEX_CI': '1', 'LANGUAGE': 'en_IN:en', 'USER': 'rahul', 'XDG_SESSION_TYPE': 'wayland', 'LAMMPS_POTENTIALS': '/usr/share/lammps/potentials', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/rahul/ros2_ws/install/examples_rclcpp_wait_set/lib:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber/lib:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition/lib:/home/rahul/colcon_ws/install/servo_msgs/lib:/home/rahul/colcon_ws/install/realsense_gazebo_plugin/lib:/home/rahul/colcon_ws/install/payload_service/lib:/home/rahul/colcon_ws/install/linkattacher_msgs/lib:/home/rahul/colcon_ws/install/ebot_docking/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:', 'HOME': '/home/rahul', 'OLDPWD': '/home/rahul', 'DESKTOP_SESSION': 'ubuntu', 'GAZEBO_MASTER_URI': 'http://localhost:11345', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'HOMEBREW_PREFIX': '/home/linuxbrew/.linuxbrew', 'GTK_MODULES': 'gail:atk-bridge', 'PAGER': 'cat', 'LC_CTYPE': 'C.UTF-8', 'SYSTEMD_EXEC_PID': '1724', 'IM_CONFIG_CHECK_ENV': '1', 'NO_COLOR': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_colcon_cd_root': '/opt/ros/humble/', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/rahul/colcon_ws/install:/home/rahul/ros2_ws/install:/home/rahul/arduinobot_ws/install', 'INFOPATH': '/home/linuxbrew/.linuxbrew/share/info:', 'ROS_DISTRO': 'humble', 'LOGNAME': 'rahul', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'rahul', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': '/usr/share/gazebo-11/../../share/gazebo-11/models:', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'OGRE_RESOURCE_PATH': '/usr/lib/x86_64-linux-gnu/OGRE-1.9.0', 'PATH': '/home/rahul/.local/bin:/home/rahul/.codex/tmp/arg0/codex-arg0OrSaql:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/opt/ros/humble/bin:/home/rahul/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/rahul-Victus-by-HP-Laptop-16-e0xxx:@/tmp/.ICE-unix/1696,unix/rahul-Victus-by-HP-Laptop-16-e0xxx:/tmp/.ICE-unix/1696', 'HOMEBREW_CELLAR': '/home/linuxbrew/.linuxbrew/Cellar', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/83445c30_8531_41f4_81db_de1ed4238fa7', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'CODEX_SANDBOX_NETWORK_DISABLED': '1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'GH_PAGER': 'cat', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.27FON3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.101', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/rahul/arduinobot_ws/install/arduinobot_py_examples:/home/rahul/arduinobot_ws/install/arduinobot_description:/home/rahul/ros2_ws/install/launch_testing_examples:/home/rahul/ros2_ws/install/examples_rclpy_pointcloud_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclpy_minimal_service:/home/rahul/ros2_ws/install/examples_rclpy_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclpy_minimal_client:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclpy_guard_conditions:/home/rahul/ros2_ws/install/examples_rclpy_executors:/home/rahul/ros2_ws/install/examples_rclcpp_wait_set:/home/rahul/ros2_ws/install/examples_rclcpp_multithreaded_executor:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_timer:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_service:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_client:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclcpp_cbg_executor:/home/rahul/ros2_ws/install/examples_rclcpp_async_client:/home/rahul/ros2_ws/install/My_package:/home/rahul/colcon_ws/install/ur_simulation_gazebo:/home/rahul/colcon_ws/install/ur_moveit_config:/home/rahul/colcon_ws/install/ur_description:/home/rahul/colcon_ws/install/ur5_control:/home/rahul/colcon_ws/install/realsense_gazebo_plugin:/home/rahul/colcon_ws/install/pymoveit2:/home/rahul/colcon_ws/install/ebot_description:/home/rahul/colcon_ws/install/payload_service:/home/rahul/colcon_ws/install/linkattacher_msgs:/home/rahul/colcon_ws/install/eyantra_warehouse:/home/rahul/colcon_ws/install/ebot_nav2:/home/rahul/colcon_ws/install/ebot_docking:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'CODEX_THREAD_ID': '019d6c30-7ea4-7dc1-9e8b-35cb84d97593', 'GAZEBO_RESOURCE_PATH': '/usr/share/gazebo-11/../../share/gazebo-11:', 'GAZEBO_MODEL_DATABASE_URI': 'http://models.gazebosim.org', 'GIT_PAGER': 'cat', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/rahul/ros2_workspace/build/my_robot_controller', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'GAZEBO_PLUGIN_PATH': '/usr/share/gazebo-11/../../lib/x86_64-linux-gnu/gazebo-11/plugins:', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/rahul/ros2_workspace/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rahul/ros2_workspace/install/my_robot_controller/lib/python3.10/site-packages:/home/rahul/arduinobot_ws/install/arduinobot_py_examples/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/launch_testing_examples/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_pointcloud_publisher/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_subscriber/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_service/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_publisher/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_client/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_server/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_minimal_action_client/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_guard_conditions/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/examples_rclpy_executors/lib/python3.10/site-packages:/home/rahul/ros2_ws/install/My_package/lib/python3.10/site-packages:/home/rahul/colcon_ws/install/ur5_control/lib/python3.10/site-packages:/home/rahul/colcon_ws/install/pymoveit2/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/payload_service/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/linkattacher_msgs/local/lib/python3.10/dist-packages:/home/rahul/colcon_ws/install/ebot_docking/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'HOMEBREW_REPOSITORY': '/home/linuxbrew/.linuxbrew/Homebrew', 'MSI2LMP_LIBRARY': '/usr/share/lammps/frc_files', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/rahul/arduinobot_ws/install/arduinobot_description:/home/rahul/ros2_ws/install/examples_rclcpp_wait_set:/home/rahul/ros2_ws/install/examples_rclcpp_multithreaded_executor:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_timer:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_subscriber:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_service:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_publisher:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_composition:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_client:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_server:/home/rahul/ros2_ws/install/examples_rclcpp_minimal_action_client:/home/rahul/ros2_ws/install/examples_rclcpp_cbg_executor:/home/rahul/ros2_ws/install/examples_rclcpp_async_client:/home/rahul/colcon_ws/install/ur_simulation_gazebo:/home/rahul/colcon_ws/install/ur_moveit_config:/home/rahul/colcon_ws/install/ur_description:/home/rahul/colcon_ws/install/servo_msgs:/home/rahul/colcon_ws/install/realsense_gazebo_plugin:/home/rahul/colcon_ws/install/pymoveit2:/home/rahul/colcon_ws/install/ebot_description:/home/rahul/colcon_ws/install/payload_service:/home/rahul/colcon_ws/install/linkattacher_msgs:/home/rahul/colcon_ws/install/eyantra_warehouse:/home/rahul/colcon_ws/install/ebot_nav2:/home/rahul/colcon_ws/install/ebot_docking'}, 'shell': False}
+[31.037225] (-) TimerEvent: {}
+[31.137393] (-) TimerEvent: {}
+[31.234562] (my_robot_controller) StdoutLine: {'line': b'running egg_info\n'}
+[31.234836] (my_robot_controller) StdoutLine: {'line': b'writing ../../build/my_robot_controller/my_robot_controller.egg-info/PKG-INFO\n'}
+[31.234912] (my_robot_controller) StdoutLine: {'line': b'writing dependency_links to ../../build/my_robot_controller/my_robot_controller.egg-info/dependency_links.txt\n'}
+[31.234976] (my_robot_controller) StdoutLine: {'line': b'writing entry points to ../../build/my_robot_controller/my_robot_controller.egg-info/entry_points.txt\n'}
+[31.235102] (my_robot_controller) StdoutLine: {'line': b'writing requirements to ../../build/my_robot_controller/my_robot_controller.egg-info/requires.txt\n'}
+[31.235165] (my_robot_controller) StdoutLine: {'line': b'writing top-level names to ../../build/my_robot_controller/my_robot_controller.egg-info/top_level.txt\n'}
+[31.236108] (my_robot_controller) StdoutLine: {'line': b"reading manifest file '../../build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'\n"}
+[31.236918] (my_robot_controller) StdoutLine: {'line': b"writing manifest file '../../build/my_robot_controller/my_robot_controller.egg-info/SOURCES.txt'\n"}
+[31.237013] (my_robot_controller) StdoutLine: {'line': b'running build\n'}
+[31.237073] (my_robot_controller) StdoutLine: {'line': b'running build_py\n'}
+[31.237215] (my_robot_controller) StdoutLine: {'line': b'copying my_robot_controller/perception_controller.py -> /home/rahul/ros2_workspace/build/my_robot_controller/build/lib/my_robot_controller\n'}
+[31.237452] (-) TimerEvent: {}
+[31.237540] (my_robot_controller) StdoutLine: {'line': b'running install\n'}
+[31.237819] (my_robot_controller) StdoutLine: {'line': b'running install_lib\n'}
+[31.238583] (my_robot_controller) StdoutLine: {'line': b'creating /home/rahul/ros2_workspace/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller\n'}
+[31.238714] (my_robot_controller) StdoutLine: {'line': b'copying /home/rahul/ros2_workspace/build/my_robot_controller/build/lib/my_robot_controller/__init__.py -> /home/rahul/ros2_workspace/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller\n'}
+[31.238815] (my_robot_controller) StdoutLine: {'line': b'copying /home/rahul/ros2_workspace/build/my_robot_controller/build/lib/my_robot_controller/sign_detection_code.py -> /home/rahul/ros2_workspace/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller\n'}
+[31.238917] (my_robot_controller) StdoutLine: {'line': b'copying /home/rahul/ros2_workspace/build/my_robot_controller/build/lib/my_robot_controller/perception_controller.py -> /home/rahul/ros2_workspace/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller\n'}
+[31.239003] (my_robot_controller) StdoutLine: {'line': b'copying /home/rahul/ros2_workspace/build/my_robot_controller/build/lib/my_robot_controller/move_robot.py -> /home/rahul/ros2_workspace/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller\n'}
+[31.239508] (my_robot_controller) StdoutLine: {'line': b'byte-compiling /home/rahul/ros2_workspace/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/__init__.py to __init__.cpython-310.pyc\n'}
+[31.239704] (my_robot_controller) StdoutLine: {'line': b'byte-compiling /home/rahul/ros2_workspace/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/sign_detection_code.py to sign_detection_code.cpython-310.pyc\n'}
+[31.239975] (my_robot_controller) StdoutLine: {'line': b'byte-compiling /home/rahul/ros2_workspace/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/perception_controller.py to perception_controller.cpython-310.pyc\n'}
+[31.243578] (my_robot_controller) StdoutLine: {'line': b'byte-compiling /home/rahul/ros2_workspace/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller/move_robot.py to move_robot.cpython-310.pyc\n'}
+[31.244194] (my_robot_controller) StdoutLine: {'line': b'running install_data\n'}
+[31.244269] (my_robot_controller) StdoutLine: {'line': b'copying resource/my_robot_controller -> /home/rahul/ros2_workspace/install/my_robot_controller/share/ament_index/resource_index/packages\n'}
+[31.244408] (my_robot_controller) StdoutLine: {'line': b'copying package.xml -> /home/rahul/ros2_workspace/install/my_robot_controller/share/my_robot_controller\n'}
+[31.244531] (my_robot_controller) StdoutLine: {'line': b'running install_egg_info\n'}
+[31.245796] (my_robot_controller) StdoutLine: {'line': b'Copying ../../build/my_robot_controller/my_robot_controller.egg-info to /home/rahul/ros2_workspace/install/my_robot_controller/lib/python3.10/site-packages/my_robot_controller-0.0.0-py3.10.egg-info\n'}
+[31.246634] (my_robot_controller) StdoutLine: {'line': b'running install_scripts\n'}
+[31.262755] (my_robot_controller) StdoutLine: {'line': b'Installing move_robot script to /home/rahul/ros2_workspace/install/my_robot_controller/lib/my_robot_controller\n'}
+[31.263040] (my_robot_controller) StdoutLine: {'line': b'Installing perception_controller script to /home/rahul/ros2_workspace/install/my_robot_controller/lib/my_robot_controller\n'}
+[31.263204] (my_robot_controller) StdoutLine: {'line': b"writing list of installed files to '/home/rahul/ros2_workspace/build/my_robot_controller/install.log'\n"}
+[31.285124] (my_robot_controller) CommandEnded: {'returncode': 0}
+[31.290789] (my_robot_controller) JobEnded: {'identifier': 'my_robot_controller', 'rc': 0}
+[31.291262] (-) EventReactorShutdown: {}
