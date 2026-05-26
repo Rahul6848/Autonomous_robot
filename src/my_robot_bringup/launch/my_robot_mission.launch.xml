@@ -1,0 +1,48 @@
+<launch>
+    <!-- ─────────────────────────────────────────────────────────────────────
+         my_robot_mission.launch.xml
+         Launches:
+           1. robot_state_publisher  (URDF / TF)
+           2. Gazebo + world
+           3. Robot spawn
+           4. mission_controller     (idle, waiting for terminal command)
+           5. RViz2
+
+         The mission_commander (terminal interface) is intentionally NOT
+         started here. Launch it separately in another terminal:
+             ros2 run my_robot_controller mission_commander
+    ──────────────────────────────────────────────────────────────────────── -->
+
+    <let name="urdf_path"
+         value="$(find-pkg-share my_robot_description)/urdf/my_robot.urdf.xacro" />
+
+    <let name="rviz_config"
+         value="$(find-pkg-share my_robot_bringup)/rviz/urdf_config.rviz" />
+
+    <!-- 1. Robot state publisher -->
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="robot_description"
+               value="$(command 'xacro $(var urdf_path)')" />
+    </node>
+
+    <!-- 2. Gazebo with road world -->
+    <include file="$(find-pkg-share gazebo_ros)/launch/gazebo.launch.py">
+        <arg name="world"
+             value="$(find-pkg-share my_robot_bringup)/worlds/road_world.world" />
+    </include>
+
+    <!-- 3. Spawn robot at Point A -->
+    <node pkg="gazebo_ros" exec="spawn_entity.py"
+          args="-topic robot_description -entity my_robot -x -8.0 -y 0.75 -z 0.2" />
+
+    <!-- 4. Mission controller (idle by default) -->
+    <node pkg="my_robot_controller"
+          exec="mission_controller"
+          name="mission_controller"
+          output="screen" />
+
+    <!-- 5. RViz2 -->
+    <node pkg="rviz2" exec="rviz2" output="screen"
+          args="-d $(var rviz_config)" />
+
+</launch>

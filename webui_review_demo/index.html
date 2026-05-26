@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Robot Dashboard Review Demo</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="shell">
+      <header class="topbar">
+        <div class="hero-copy">
+          <p class="eyebrow">Review Demo</p>
+          <h1>My Robot Dashboard</h1>
+          <p class="hero-text">
+            Static showcase build for company review. This version demonstrates the interface,
+            command flow, status presentation, camera panel, and Gazebo/RViz layout without
+            connecting to ROS 2 or controlling a live robot.
+          </p>
+        </div>
+        <div class="badge-row">
+          <span class="badge badge-demo">Demo Mode</span>
+          <span class="badge" id="stackBadge">Stack: Parking Mission</span>
+          <span class="badge" id="desktopBadge">Desktop: preview ready</span>
+          <span class="badge" id="cameraBadge">Camera: preview feed</span>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="card controls-card">
+          <div class="section-head">
+            <h2>Robot Commands</h2>
+            <p>Interactive mock controls that simulate the live dashboard behavior.</p>
+          </div>
+          <div class="button-grid">
+            <button data-command="resume" class="primary">Resume</button>
+            <button data-command="go check B">Go Check B</button>
+            <button data-command="return">Return</button>
+            <button data-command="stop" class="danger">Stop</button>
+            <button data-command="park at A">Park A</button>
+            <button data-command="park at B">Park B</button>
+            <button data-command="park at C">Park C</button>
+            <button data-command="park at D">Park D</button>
+          </div>
+          <form id="customCommandForm" class="command-form">
+            <input id="customCommandInput" type="text" placeholder="Type a custom command for demo playback">
+            <button class="primary" type="submit">Send</button>
+          </form>
+          <p class="helper" id="commandMessage">This demo does not send real commands.</p>
+        </section>
+
+        <section class="card video-card">
+          <div class="section-head">
+            <h2>Robot Camera</h2>
+            <p>UI-only preview of the camera region used in the live dashboard.</p>
+          </div>
+          <div class="video-frame">
+            <img id="cameraStream" alt="Robot camera preview">
+            <div class="hud-chip">Preview Feed</div>
+          </div>
+        </section>
+
+        <section class="card desktop-card">
+          <div class="section-head">
+            <h2>Gazebo + RViz Desktop</h2>
+            <p>Static mockup showing how the browser-embedded desktop panel is presented.</p>
+          </div>
+          <div class="desktop-frame">
+            <img id="desktopPreview" alt="Gazebo and RViz desktop preview">
+            <div class="desktop-window window-left">
+              <div class="window-bar">Gazebo</div>
+              <div class="window-body">
+                <div class="road-grid"></div>
+                <div class="robot-dot"></div>
+              </div>
+            </div>
+            <div class="desktop-window window-right">
+              <div class="window-bar">RViz</div>
+              <div class="window-body window-rviz">
+                <div class="rviz-ring ring-a"></div>
+                <div class="rviz-ring ring-b"></div>
+                <div class="rviz-marker"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card status-card">
+          <div class="section-head">
+            <h2>Mission Status</h2>
+            <p>Sample status timeline rendered in the same review layout.</p>
+          </div>
+          <div class="status-now" id="currentStatus">PARKED_AT_B - demo mission complete.</div>
+          <div class="log-box" id="statusHistory"></div>
+        </section>
+
+        <section class="card status-card">
+          <div class="section-head">
+            <h2>Stack Logs</h2>
+            <p>Representative launch and dashboard logs for a reviewer-facing preview.</p>
+          </div>
+          <div class="log-box" id="stackLogs"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+  </html>

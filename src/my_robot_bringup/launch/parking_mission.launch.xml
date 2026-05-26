@@ -1,0 +1,28 @@
+<launch>
+    <let name="urdf_path"
+         value="$(find-pkg-share my_robot_description)/urdf/my_robot.urdf.xacro" />
+
+    <let name="rviz_config"
+         value="$(find-pkg-share my_robot_bringup)/rviz/urdf_config.rviz" />
+
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="robot_description"
+               value="$(command 'xacro $(var urdf_path)')" />
+    </node>
+
+    <include file="$(find-pkg-share gazebo_ros)/launch/gazebo.launch.py">
+        <arg name="world"
+             value="$(find-pkg-share my_robot_bringup)/worlds/parkingWorld" />
+    </include>
+
+    <node pkg="gazebo_ros" exec="spawn_entity.py"
+          args="-topic robot_description -entity my_robot -x 0.0 -y 0.0 -z 0.2 -Y 0.0" />
+
+    <node pkg="my_robot_controller"
+          exec="parking_mission_controller"
+          name="parking_mission_controller"
+          output="screen" />
+
+    <node pkg="rviz2" exec="rviz2" output="screen"
+          args="-d $(var rviz_config)" />
+</launch>

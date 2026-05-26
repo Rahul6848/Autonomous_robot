@@ -1,0 +1,7 @@
+.my_robot_webui.env
+build/
+install/
+log/
+__pycache__/
+*.pyc
+*.pyo

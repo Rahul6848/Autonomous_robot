@@ -19,9 +19,14 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            # Original nodes
             'move_robot = my_robot_controller.move_robot:main',
             'perception_controller = my_robot_controller.perception_controller:main',
             'lidar_navigation_controller = my_robot_controller.lidar_navigation_controller:main',
+            # New command-based mission nodes
+            'mission_controller = my_robot_controller.mission_controller:main',
+            'mission_commander  = my_robot_controller.mission_commander:main',
+            'parking_mission_controller = my_robot_controller.parking_mission_controller:main',
         ],
     },
 )
