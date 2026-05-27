@@ -1,0 +1,20 @@
+[Unit]
+Description=My Robot WebUI
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=deploy
+WorkingDirectory=/home/deploy/ros2_workspace
+EnvironmentFile=/home/deploy/ros2_workspace/deploy/vps/my_robot_webui.env
+ExecStart=/home/deploy/ros2_workspace/deploy/vps/run_my_robot_webui.sh
+Restart=always
+RestartSec=5
+KillSignal=SIGINT
+TimeoutStopSec=30
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
