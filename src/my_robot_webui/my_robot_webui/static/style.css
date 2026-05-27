@@ -383,6 +383,7 @@ input {
 }
 
 .video-frame img,
+.desktop-frame img,
 .desktop-frame iframe {
   display: block;
   width: 100%;

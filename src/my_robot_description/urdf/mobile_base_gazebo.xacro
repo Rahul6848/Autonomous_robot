@@ -1,10 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <gazebo reference="base_link">
-        <material>Gazebo/Blue</material>
-    </gazebo>
-
     <gazebo reference="right_wheel_link">
         <material>Gazebo/Red</material>
     </gazebo>
@@ -33,6 +29,10 @@
             <wheel_separation>0.45</wheel_separation>
             <wheel_diameter>0.2</wheel_diameter>
 
+            <!-- limits -->
+            <max_wheel_torque>8.0</max_wheel_torque>
+            <max_wheel_acceleration>0.6</max_wheel_acceleration>
+
             <!-- output -->
             <publish_odom>true</publish_odom>
             <publish_odom_tf>true</publish_odom_tf>
@@ -40,7 +40,7 @@
 
             <odometry_topic>odom</odometry_topic>
             <odometry_frame>odom</odometry_frame>
-            <robot_base_frame>chassis</robot_base_frame>
+            <robot_base_frame>base_footprint</robot_base_frame>
 
         </plugin>
     </gazebo>

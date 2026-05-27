@@ -16,7 +16,7 @@
         </div>
         <div class="badge-row">
           <span class="badge" id="stackBadge">Stack: booting</span>
-          <span class="badge" id="desktopBadge">Desktop: checking</span>
+          <span class="badge" id="desktopBadge">Gazebo: checking</span>
           <span class="badge" id="cameraBadge">Camera: checking</span>
         </div>
       </header>
@@ -58,10 +58,11 @@
 
         <section class="card desktop-card">
           <div class="section-head">
-            <h2>Gazebo + RViz Desktop</h2>
-            <p>The desktop stream is started automatically together with the mission stack when noVNC tools are available.</p>
+            <h2>Gazebo Panel</h2>
+            <p>The panel prefers a live overhead Gazebo view and falls back to the browser desktop stream when that sensor is unavailable.</p>
           </div>
           <div class="desktop-frame" id="desktopFrameWrap">
+            <img id="topCameraStream" alt="Top-down Gazebo view">
             <iframe id="desktopFrame" title="Gazebo and RViz desktop"></iframe>
             <div class="video-overlay" id="desktopOverlay"></div>
           </div>

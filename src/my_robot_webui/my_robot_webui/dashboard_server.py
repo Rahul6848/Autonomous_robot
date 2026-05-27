@@ -45,6 +45,7 @@ LOCAL_ENV_FILENAME = '.my_robot_webui.env'
 LOG_TAIL = 250
 JPEG_QUALITY = 80
 CAMERA_TOPIC = '/camera/image_raw'
+TOP_VIEW_CAMERA_TOPIC = '/top_view_camera/image_raw'
 COMMAND_TOPIC = '/robot_command'
 STATUS_TOPIC = '/mission_status'
 GUI_ENV_KEYS = [
@@ -526,19 +527,24 @@ class DesktopStreamManager:
         display = os.environ.get('DISPLAY')
         if not display:
             return CommandResult(False, 'DISPLAY is not set. Start the dashboard from a desktop session.')
-        if not shutil_which('x11vnc'):
+        x11vnc_path = resolve_tool_path('x11vnc')
+        if not x11vnc_path:
             return CommandResult(False, 'x11vnc is not installed.')
-        if not shutil_which('novnc_proxy'):
-            return CommandResult(False, 'novnc_proxy is not installed.')
+        novnc_command = build_novnc_command(self.novnc_port, self.vnc_port)
+        if not novnc_command:
+            return CommandResult(False, 'noVNC tools are not installed.')
 
         vnc_result = self.vnc.start(
             [
-                'x11vnc',
+                x11vnc_path,
                 '-display',
                 display,
+                '-auth',
+                'guess',
                 '-nopw',
                 '-forever',
                 '-shared',
+                '-noxdamage',
                 '-rfbport',
                 str(self.vnc_port),
             ]
@@ -546,14 +552,15 @@ class DesktopStreamManager:
         if not vnc_result.ok and not self.vnc.is_running():
             return vnc_result
 
+        time.sleep(0.8)
+        if not self.vnc.is_running():
+            vnc_snapshot = self.vnc.snapshot()
+            recent_logs = '\n'.join(vnc_snapshot.get('logs', [])[-8:])
+            details = f' x11vnc logs:\n{recent_logs}' if recent_logs else ''
+            return CommandResult(False, f'x11vnc failed to stay running.{details}')
+
         novnc_result = self.novnc.start(
-            [
-                'novnc_proxy',
-                '--listen',
-                str(self.novnc_port),
-                '--vnc',
-                f'localhost:{self.vnc_port}',
-            ]
+            novnc_command
         )
         if not novnc_result.ok and not self.novnc.is_running():
             return novnc_result
@@ -573,8 +580,9 @@ class DesktopStreamManager:
         return {
             'display': os.environ.get('DISPLAY', ''),
             'display_available': bool(os.environ.get('DISPLAY')),
-            'x11vnc_installed': bool(shutil_which('x11vnc')),
-            'novnc_installed': bool(shutil_which('novnc_proxy')),
+            'session_type': os.environ.get('XDG_SESSION_TYPE', ''),
+            'x11vnc_installed': bool(resolve_tool_path('x11vnc')),
+            'novnc_installed': novnc_available(),
             'vnc': self.vnc.snapshot(),
             'novnc': self.novnc.snapshot(),
             'novnc_url': novnc_url,
@@ -588,6 +596,8 @@ class DashboardRosBridge(Node):
         self._bridge = CvBridge() if CV_AVAILABLE else None
         self._camera_frame: Optional[bytes] = None
         self._camera_updated_at = 0.0
+        self._top_camera_frame: Optional[bytes] = None
+        self._top_camera_updated_at = 0.0
         self._last_status = 'Waiting for mission status...'
         self._status_updated_at = 0.0
         self._status_sequence = 0
@@ -599,6 +609,7 @@ class DashboardRosBridge(Node):
         self.command_pub = self.create_publisher(String, COMMAND_TOPIC, 10)
         self.create_subscription(String, STATUS_TOPIC, self._status_callback, 10)
         self.create_subscription(Image, CAMERA_TOPIC, self._image_callback, 10)
+        self.create_subscription(Image, TOP_VIEW_CAMERA_TOPIC, self._top_image_callback, 10)
 
     def send_command(self, text: str) -> CommandResult:
         command = text.strip()
@@ -617,6 +628,7 @@ class DashboardRosBridge(Node):
     def snapshot(self) -> Dict[str, object]:
         with self._lock:
             camera_age = time.time() - self._camera_updated_at if self._camera_updated_at else None
+            top_camera_age = time.time() - self._top_camera_updated_at if self._top_camera_updated_at else None
             return {
                 'last_status': self._last_status,
                 'status_updated_at': self._status_updated_at,
@@ -624,6 +636,8 @@ class DashboardRosBridge(Node):
                 'command_updated_at': self._command_updated_at,
                 'camera_available': self._camera_frame is not None and camera_age is not None and camera_age < 2.5,
                 'camera_updated_at': self._camera_updated_at,
+                'top_camera_available': self._top_camera_frame is not None and top_camera_age is not None and top_camera_age < 2.5,
+                'top_camera_updated_at': self._top_camera_updated_at,
                 'status_sequence': self._status_sequence,
                 'status_history': list(self._status_history),
                 'status_events': list(self._status_events),
@@ -632,6 +646,10 @@ class DashboardRosBridge(Node):
     def camera_frame(self) -> Optional[bytes]:
         with self._lock:
             return self._camera_frame
+
+    def top_camera_frame(self) -> Optional[bytes]:
+        with self._lock:
+            return self._top_camera_frame
 
     def _status_callback(self, msg: String) -> None:
         with self._lock:
@@ -647,20 +665,35 @@ class DashboardRosBridge(Node):
             )
 
     def _image_callback(self, msg: Image) -> None:
-        if not CV_AVAILABLE or self._bridge is None:
+        encoded = self._encode_image(msg)
+        if encoded is None:
             return
+
+        with self._lock:
+            self._camera_frame = encoded
+            self._camera_updated_at = time.time()
+
+    def _top_image_callback(self, msg: Image) -> None:
+        encoded = self._encode_image(msg)
+        if encoded is None:
+            return
+
+        with self._lock:
+            self._top_camera_frame = encoded
+            self._top_camera_updated_at = time.time()
+
+    def _encode_image(self, msg: Image) -> Optional[bytes]:
+        if not CV_AVAILABLE or self._bridge is None:
+            return None
         try:
             frame = self._bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
             ok, encoded = cv2.imencode('.jpg', frame, [int(cv2.IMWRITE_JPEG_QUALITY), JPEG_QUALITY])
             if not ok:
-                return
+                return None
         except Exception as exc:
             self.get_logger().warning(f'Camera frame conversion failed: {exc}', throttle_duration_sec=2.0)
-            return
-
-        with self._lock:
-            self._camera_frame = encoded.tobytes()
-            self._camera_updated_at = time.time()
+            return None
+        return encoded.tobytes()
 
 
 class DashboardApplication:
@@ -731,6 +764,7 @@ class DashboardApplication:
             },
             'available_modes': list(STACK_COMMANDS.keys()),
             'camera_stream_url': '/stream/camera.mjpg',
+            'top_camera_stream_url': '/stream/top_camera.mjpg',
             'gui_env': gui_environment(),
         }
 
@@ -806,6 +840,9 @@ class DashboardApplication:
                 if parsed.path == '/stream/camera.mjpg':
                     self._stream_camera()
                     return
+                if parsed.path == '/stream/top_camera.mjpg':
+                    self._stream_top_camera()
+                    return
                 self.send_error(HTTPStatus.NOT_FOUND, 'Not found')
 
             def do_POST(self) -> None:
@@ -870,6 +907,12 @@ class DashboardApplication:
                 self.wfile.write(encoded)
 
             def _stream_camera(self) -> None:
+                self._stream_frames(app.bridge.camera_frame)
+
+            def _stream_top_camera(self) -> None:
+                self._stream_frames(app.bridge.top_camera_frame)
+
+            def _stream_frames(self, frame_supplier) -> None:
                 self.send_response(HTTPStatus.OK)
                 self.send_header('Age', '0')
                 self.send_header('Cache-Control', 'no-cache, private')
@@ -878,7 +921,7 @@ class DashboardApplication:
                 self.end_headers()
 
                 while True:
-                    frame = app.bridge.camera_frame()
+                    frame = frame_supplier()
                     if frame is None:
                         time.sleep(0.2)
                         continue
@@ -896,12 +939,74 @@ class DashboardApplication:
         return DashboardRequestHandler
 
 
+TOOL_FALLBACK_PATHS = {
+    'novnc_proxy': [
+        '/usr/share/novnc/utils/novnc_proxy',
+        '/usr/lib/novnc/utils/novnc_proxy',
+    ],
+    'novnc_web_root': [
+        '/usr/share/novnc',
+    ],
+}
+
+
 def shutil_which(command: str) -> str:
     for path in os.environ.get('PATH', '').split(os.pathsep):
         candidate = Path(path) / command
         if candidate.exists() and os.access(candidate, os.X_OK):
             return str(candidate)
     return ''
+
+
+def resolve_tool_path(command: str) -> str:
+    resolved = shutil_which(command)
+    if resolved:
+        return resolved
+
+    for raw_path in TOOL_FALLBACK_PATHS.get(command, []):
+        candidate = Path(raw_path)
+        if candidate.exists() and os.access(candidate, os.X_OK):
+            return str(candidate)
+    return ''
+
+
+def resolve_directory_path(name: str) -> str:
+    for raw_path in TOOL_FALLBACK_PATHS.get(name, []):
+        candidate = Path(raw_path)
+        if candidate.is_dir():
+            return str(candidate)
+    return ''
+
+
+def novnc_available() -> bool:
+    if resolve_tool_path('novnc_proxy'):
+        return True
+    return bool(resolve_tool_path('websockify') and resolve_directory_path('novnc_web_root'))
+
+
+def build_novnc_command(novnc_port: int, vnc_port: int) -> List[str]:
+    novnc_proxy_path = resolve_tool_path('novnc_proxy')
+    if novnc_proxy_path:
+        return [
+            novnc_proxy_path,
+            '--listen',
+            str(novnc_port),
+            '--vnc',
+            f'localhost:{vnc_port}',
+        ]
+
+    websockify_path = resolve_tool_path('websockify')
+    web_root = resolve_directory_path('novnc_web_root')
+    if websockify_path and web_root:
+        return [
+            websockify_path,
+            '--web',
+            web_root,
+            str(novnc_port),
+            f'localhost:{vnc_port}',
+        ]
+
+    return []
 
 
 def gui_environment() -> Dict[str, str]:

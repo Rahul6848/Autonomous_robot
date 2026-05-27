@@ -18,6 +18,7 @@ const els = {
   parkingQueueStatus: document.getElementById("parkingQueueStatus"),
   cameraStream: document.getElementById("cameraStream"),
   cameraOverlay: document.getElementById("cameraOverlay"),
+  topCameraStream: document.getElementById("topCameraStream"),
   desktopFrame: document.getElementById("desktopFrame"),
   desktopOverlay: document.getElementById("desktopOverlay"),
   customCommandForm: document.getElementById("customCommandForm"),
@@ -213,25 +214,42 @@ function formatMode(mode) {
 
 function renderDesktop(stateData) {
   const desktop = stateData.desktop;
+  const ros = stateData.ros;
   const ready = desktop.novnc.running;
   const installed = desktop.x11vnc_installed && desktop.novnc_installed;
   state.desktopUrl = desktop.novnc_url;
+
+  if (ros.top_camera_available) {
+    if (!els.topCameraStream.src || !els.topCameraStream.src.endsWith(stateData.top_camera_stream_url)) {
+      els.topCameraStream.src = stateData.top_camera_stream_url;
+    }
+    els.topCameraStream.style.display = "block";
+    els.desktopFrame.style.display = "none";
+    els.desktopOverlay.style.display = "none";
+    updateBadge(els.desktopBadge, "Gazebo: top view live", "good");
+    return;
+  }
+
+  els.topCameraStream.removeAttribute("src");
+  els.topCameraStream.style.display = "none";
 
   if (ready) {
     if (els.desktopFrame.src !== desktop.novnc_url) {
       els.desktopFrame.src = desktop.novnc_url;
     }
+    els.desktopFrame.style.display = "block";
     els.desktopOverlay.style.display = "none";
-    updateBadge(els.desktopBadge, "Desktop: browser stream ready", "good");
+    updateBadge(els.desktopBadge, "Gazebo: desktop stream live", "good");
     return;
   }
 
   els.desktopFrame.removeAttribute("src");
+  els.desktopFrame.style.display = "none";
   els.desktopOverlay.style.display = "flex";
 
   if (!desktop.display_available) {
-    els.desktopOverlay.textContent = "DISPLAY is not set. Start this dashboard from the same Linux desktop session where you want Gazebo and RViz to open.";
-    updateBadge(els.desktopBadge, "Desktop: DISPLAY missing", "bad");
+    els.desktopOverlay.textContent = "Waiting for the overhead Gazebo camera. If you want browser mirroring as a fallback, start the dashboard from a session with DISPLAY set.";
+    updateBadge(els.desktopBadge, "Gazebo: top view offline", "bad");
     return;
   }
 
@@ -239,13 +257,19 @@ function renderDesktop(stateData) {
     const missing = [];
     if (!desktop.x11vnc_installed) missing.push("x11vnc");
     if (!desktop.novnc_installed) missing.push("novnc_proxy");
-    els.desktopOverlay.textContent = `Desktop streaming needs: ${missing.join(", ")}. The dashboard can still launch Gazebo and RViz locally without the browser desktop view.`;
-    updateBadge(els.desktopBadge, "Desktop: streaming unavailable", "bad");
+    els.desktopOverlay.textContent = `Waiting for /top_view_camera/image_raw. Desktop fallback also needs: ${missing.join(", ")}.`;
+    updateBadge(els.desktopBadge, "Gazebo: top view offline", "bad");
     return;
   }
 
-  els.desktopOverlay.textContent = "Desktop streamer is installed but not active yet. It will come up with the mission stack when the stream tools start correctly.";
-  updateBadge(els.desktopBadge, "Desktop: ready to start", "neutral");
+  if ((desktop.session_type || "").toLowerCase() === "wayland") {
+    els.desktopOverlay.textContent = "Waiting for /top_view_camera/image_raw. Desktop fallback is limited in Wayland sessions.";
+    updateBadge(els.desktopBadge, "Gazebo: top view offline", "bad");
+    return;
+  }
+
+  els.desktopOverlay.textContent = "Waiting for the overhead Gazebo camera. Desktop fallback will appear when noVNC starts correctly.";
+  updateBadge(els.desktopBadge, "Gazebo: waiting for top view", "neutral");
 }
 
 function renderCamera(stateData) {
@@ -295,12 +319,14 @@ async function refreshState() {
     ensureStackStarted(data);
   } catch (error) {
     updateBadge(els.stackBadge, "Stack: dashboard disconnected", "bad");
-    updateBadge(els.desktopBadge, "Desktop: dashboard disconnected", "bad");
+    updateBadge(els.desktopBadge, "Gazebo: dashboard disconnected", "bad");
     updateBadge(els.cameraBadge, "Camera: dashboard disconnected", "bad");
     els.cameraOverlay.style.display = "flex";
     els.desktopOverlay.style.display = "flex";
     els.cameraOverlay.textContent = "Dashboard backend is unavailable.";
     els.desktopOverlay.textContent = "Dashboard backend is unavailable.";
+    els.topCameraStream.style.display = "none";
+    els.desktopFrame.style.display = "none";
   }
 }
 

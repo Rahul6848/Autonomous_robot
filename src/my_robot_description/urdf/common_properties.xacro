@@ -20,6 +20,18 @@
         <color rgba="1.0 1.0 0 1" />
     </material>
 
+    <material name="arm_copper">
+        <color rgba="0.82 0.38 0.10 1" />
+    </material>
+
+    <material name="arm_sand">
+        <color rgba="0.92 0.78 0.22 1" />
+    </material>
+
+    <material name="arm_graphite">
+        <color rgba="0.25 0.27 0.30 1" />
+    </material>
+
     <xacro:macro name="box_inertia" params="m l w h xyz rpy" >
         <inertial>
             <origin xyz="${xyz}" rpy="${rpy}" />
